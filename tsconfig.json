@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "enumselectioncontrols": [
+        "dist/enumselectioncontrols"
+      ],
+      "enumselectioncontrols/*": [
+        "dist/enumselectioncontrols/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

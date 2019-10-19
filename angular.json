@@ -2,5 +2,41 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "enumselectioncontrols": {
+      "projectType": "library",
+      "root": "projects/enumselectioncontrols",
+      "sourceRoot": "projects/enumselectioncontrols/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/enumselectioncontrols/tsconfig.lib.json",
+            "project": "projects/enumselectioncontrols/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/enumselectioncontrols/src/test.ts",
+            "tsConfig": "projects/enumselectioncontrols/tsconfig.spec.json",
+            "karmaConfig": "projects/enumselectioncontrols/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/enumselectioncontrols/tsconfig.lib.json",
+              "projects/enumselectioncontrols/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "enumselectioncontrols"
 }
