@@ -1,6 +1,6 @@
 # Enumselectioncontrols
 
-![Skjermbilde.png](Skjermbilde.png)
+![Skjermbilde.png](/Skjermbilde.PNG)
 
 Please note - this repository contains a library and a consuming project of an enum selection control for enums in Typescript to be used in Angular. It contains a SELECT control and a list of RADIO button INPUT control. It is however in beta still and should not be used in production yet. Known issues:
 
