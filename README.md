@@ -6,6 +6,15 @@ Please note - this repository contains a library and a consuming project of an e
 - The controls use Norwegian language some places.
 - It is not possible to assign custom descriptions to the enum members - You can choose from the RAW enum values and text only. E.g. like the Display Attribute in C# capapbilities.
 
+## Getting started
+
+cd into the projects\consumeEnumSelectionControls sub folder
+Then enter first: npm install
+Now just enter: ng serve -o
+The app should start up in a new pane of your default browser at port 4200 on localhost.
+
+The source code for the enum selection controls resides in the projects\enumselectioncontrols sub folder.
+
 ## Code example:
 
 The following HTML shows how to use these two library components.
