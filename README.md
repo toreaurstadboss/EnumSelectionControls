@@ -37,35 +37,32 @@ With a sample app.component.ts file 'view model':
 
 **app.component.ts**
 
-`typescript`
+```typescript
 import { Component } from "@angular/core";
 import { IceCream } from "./ice-cream";
 
 @Component({
-selector: "app-root",
-templateUrl: "./app.component.html",
-styleUrls: ["./app.component.css"]
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-title = "Consume EnumSelectors";
-IceCreamType = IceCream;
-IceCream: IceCream = IceCream.None;
+  title = "Consume EnumSelectors";
+  IceCreamType = IceCream;
+  IceCream: IceCream = IceCream.None;
 
-onIceCream(someIcream) {
-this.IceCream = someIcream;
+  onIceCream(someIcream) {
+    this.IceCream = someIcream;
+  }
 }
-}
-
 ```
-
-
-
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
 ## Code scaffolding
 
 Run `ng generate component component-name --project enumselectioncontrols` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project enumselectioncontrols`.
+
 > Note: Don't forget to add `--project enumselectioncontrols` or else it will be added to the default project in your `angular.json` file.
 
 ## Build
@@ -83,6 +80,7 @@ Run `ng test enumselectioncontrols` to execute the unit tests via [Karma](https:
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
 ```
 
 # LibraryWorkspace
@@ -112,3 +110,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
