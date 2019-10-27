@@ -3,13 +3,14 @@ import { EnumselectioncontrolsService } from "./enumselectioncontrols.service";
 import { EnumItem } from "./enum-item";
 
 @Component({
-  selector: 'lib-enumdropdown',
-  templateUrl: "./enumselectioncontrols.component.html",
+  selector: "lib-enum-select",
+  templateUrl: "./selection.component.html",
   styles: []
 })
 export class EnumselectioncontrolsComponent implements OnInit {
-  @Input() enumType: any;
+  @Input() enumtype: any;
   @Input() htmlId: string;
+  @Input() fieldname: string;
 
   enumitems: EnumItem[] = [];
   id: string;
@@ -17,6 +18,6 @@ export class EnumselectioncontrolsComponent implements OnInit {
   constructor(private enumService: EnumselectioncontrolsService) {}
 
   ngOnInit() {
-    this.enumitems = this.enumService.buildEnumList(this.enumType);
+    this.enumitems = this.enumService.buildEnumList(this.enumtype);
   }
 }

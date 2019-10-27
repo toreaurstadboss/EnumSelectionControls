@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnumselectioncontrolsComponent } from './enumselectioncontrols.component';
+import { EnumselectioncontrolsComponent } from './selection.component';
 
 describe('EnumselectioncontrolsComponent', () => {
   let component: EnumselectioncontrolsComponent;

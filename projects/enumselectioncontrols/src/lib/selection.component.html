@@ -1,4 +1,4 @@
-<select class="custom-select">
+<select name="fieldname" [(ngModel)]="fieldname" class="custom-select">
   <option>Velg verdi:</option>
   <option *ngFor="let item of enumitems" [value]="item.Value"
     >{{ item.Text }}
