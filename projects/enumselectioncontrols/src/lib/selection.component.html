@@ -1,6 +1,10 @@
-<select name="fieldname" [(ngModel)]="fieldname" class="custom-select">
+<select
+  [(ngModel)]="selectedItem"
+  (change)="selectionChanged()"
+  class="custom-select"
+>
   <option>Velg verdi:</option>
-  <option *ngFor="let item of enumitems" [value]="item.Value"
+  <option *ngFor="let item of enumitems" [ngValue]="item"
     >{{ item.Text }}
   </option>
 </select>

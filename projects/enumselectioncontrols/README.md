@@ -1,11 +1,72 @@
 # Enumselectioncontrols
 
+Please note - this repository contains a library and a consuming project of an enum selection control for enums in Typescript to be used in Angular. It contains a SELECT control and a list of RADIO button INPUT control. It is however in beta still and should not be used in production yet. Known issues:
+
+- The group name of the radio button is problematic to set in the DOM and must be resolved.
+- The controls use Norwegian language some places.
+- It is not possible to assign custom descriptions to the enum members - You can choose from the RAW enum values and text only. E.g. like the Display Attribute in C# capapbilities.
+
+## Code example:
+
+The following HTML shows how to use these two library components.
+
+**app.component.html**
+
+```html
+<form>
+  <div class="form-group span-2">
+    <label>Iskrem:</label>
+    <lib-enum-select
+      (selectionChange)="onIceCream($event)"
+      [enumtype]="IceCreamType"
+    ></lib-enum-select>
+  </div>
+
+  <div class="form-group span-2">
+    <label>Iskrem:</label>
+    <lib-enum-radio-button-list
+      [enumtype]="IceCreamType"
+      (selectionChange)="onIceCream($event)"
+      [groupname]="IceCreamGroup"
+    ></lib-enum-radio-button-list>
+  </div>
+</form>
+```
+
+With a sample app.component.ts file 'view model':
+
+**app.component.ts**
+
+`typescript`
+import { Component } from "@angular/core";
+import { IceCream } from "./ice-cream";
+
+@Component({
+selector: "app-root",
+templateUrl: "./app.component.html",
+styleUrls: ["./app.component.css"]
+})
+export class AppComponent {
+title = "Consume EnumSelectors";
+IceCreamType = IceCream;
+IceCream: IceCream = IceCream.None;
+
+onIceCream(someIcream) {
+this.IceCream = someIcream;
+}
+}
+
+```
+
+
+
+
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
 ## Code scaffolding
 
 Run `ng generate component component-name --project enumselectioncontrols` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project enumselectioncontrols`.
-> Note: Don't forget to add `--project enumselectioncontrols` or else it will be added to the default project in your `angular.json` file. 
+> Note: Don't forget to add `--project enumselectioncontrols` or else it will be added to the default project in your `angular.json` file.
 
 ## Build
 
@@ -22,3 +83,4 @@ Run `ng test enumselectioncontrols` to execute the unit tests via [Karma](https:
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```

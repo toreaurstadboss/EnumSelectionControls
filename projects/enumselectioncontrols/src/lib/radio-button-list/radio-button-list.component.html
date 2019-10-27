@@ -1,1 +1,43 @@
-<p>radio-button-list works!</p>
+<div class="form-check-inline">
+  <label
+    *ngFor="let item of enumitems"
+    class="form-check-label"
+    for="item.Value"
+  >
+    <input
+      type="radio"
+      [name]="groupname"
+      (click)="selectionChanged(item)"
+      class="form-check-input"
+      [value]="item.Value"
+    />{{ item.Text }}
+  </label>
+</div>
+
+<!-- <div class="form-check-inline">
+  <label class="form-check-label" for="radio1">
+    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Option 1
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label" for="radio2">
+    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Option 2
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" disabled>Option 3
+  </label>
+</div>
+
+
+<select
+  [(ngModel)]="selectedItem"
+  (change)="selectionChanged()"
+  class="custom-select"
+>
+  <option>Velg verdi:</option>
+  <option *ngFor="let item of enumitems" [ngValue]="item"
+    >{{ item.Text }}
+  </option>
+</select> -->

@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output } from "@angular/core";
 import { EnumselectioncontrolsService } from "./enumselectioncontrols.service";
 import { EnumItem } from "./enum-item";
+import { EventEmitter } from "@angular/core";
 
 @Component({
   selector: "lib-enum-select",
@@ -9,15 +10,20 @@ import { EnumItem } from "./enum-item";
 })
 export class EnumselectioncontrolsComponent implements OnInit {
   @Input() enumtype: any;
-  @Input() htmlId: string;
-  @Input() fieldname: string;
+  @Output() selectionChange = new EventEmitter();
 
   enumitems: EnumItem[] = [];
-  id: string;
+  selectedItem: any;
 
   constructor(private enumService: EnumselectioncontrolsService) {}
 
   ngOnInit() {
+    // debugger;
     this.enumitems = this.enumService.buildEnumList(this.enumtype);
+  }
+
+  selectionChanged() {
+    //debugger;
+    this.selectionChange.emit(this.selectedItem);
   }
 }

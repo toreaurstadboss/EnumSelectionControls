@@ -7,6 +7,6 @@ import { FormsModule } from "@angular/forms";
 @NgModule({
   declarations: [EnumselectioncontrolsComponent, RadioButtonListComponent],
   imports: [BrowserModule, FormsModule],
-  exports: [EnumselectioncontrolsComponent]
+  exports: [EnumselectioncontrolsComponent, RadioButtonListComponent]
 })
 export class EnumselectioncontrolsModule {}
